@@ -141,7 +141,7 @@ function parseBuffer(buffer) {
     var numTables;
     var tableEntries = [];
     var signature = parse.getTag(data, 0);
-    if (signature === String.fromCharCode(0, 1, 0, 0)) {
+    if (signature === 'true' || signature === String.fromCharCode(0, 1, 0, 0)) {
         font.outlinesFormat = 'truetype';
         numTables = parse.getUShort(data, 4);
         tableEntries = parseOpenTypeTableEntries(data, numTables);
