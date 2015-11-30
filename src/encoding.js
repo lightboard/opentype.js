@@ -204,6 +204,7 @@ GlyphNames.prototype.glyphIndexToName = function(gid) {
 
 function addGlyphNames(font) {
     var glyph;
+    if (!font.tables.cmap) return;
     var glyphIndexMap = font.tables.cmap.glyphIndexMap;
     var charCodes = Object.keys(glyphIndexMap);
 
